@@ -12,7 +12,6 @@ class FormularioGasto extends Component{
         nombreGasto:this.nombreGasto.current.value,
     cantidadGasto:this.cantidadGasto.current.value
 }
-
 this.props.agregarGasto(gasto)
 ;
 
@@ -33,6 +32,8 @@ e.currentTarget.reset();
                 <label>Cantidad</label>
                 <input ref={this.cantidadGasto} className="u-full-width" type="text" placeholder="Ej. 300" />
             </div>
+            <br/>
+            <label>{this.props.error}</label>
             <input className="button-primary u-full-width" type="submit" value="Agregar" />
     </form>
         )
