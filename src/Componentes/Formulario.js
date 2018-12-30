@@ -1,4 +1,6 @@
 import React ,{Component} from 'react';
+import PropTypes from 'prop-types';
+
 
 class FormularioGasto extends Component{
     //ref para los gastos del formulario 
@@ -9,8 +11,8 @@ class FormularioGasto extends Component{
     e.preventDefault();
        //crear el objeto
        const gasto={
-        nombreGasto:this.nombreGasto.current.value,
-    cantidadGasto:this.cantidadGasto.current.value
+        nombreGasto:(this.nombreGasto.current.value),
+    cantidadGasto:(this.cantidadGasto.current.value)
 }
 this.props.agregarGasto(gasto)
 ;
@@ -39,4 +41,8 @@ e.currentTarget.reset();
         )
     }
 }
+FormularioGasto.propTypes={
+agregarGasto:PropTypes.func.isRequired
+}
+
 export default FormularioGasto;
